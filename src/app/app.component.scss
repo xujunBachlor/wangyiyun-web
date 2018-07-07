@@ -1,0 +1,178 @@
+$height: 70px;
+$fontColor: #ccc;
+$margin: 20px;
+@mixin setImage($left, $top){
+    background: url(../assets/image/main/toplist.png) no-repeat $left $top;
+}
+.main-header{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    background-color: #242424;
+    justify-content: center;
+    font-size: 12px;
+    .main-logo{
+        width: 177px;
+        height: $height;
+        background: url(../assets/image/main/topbar.png) no-repeat 0 0;
+    }
+    .main-title{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: $fontColor;
+        margin-right: 50px;
+        div{
+            padding: 0 20px;
+            cursor: pointer;
+            line-height: $height;
+            &:hover{
+                background-color: #000000;
+            }
+        }
+    }
+    .main-video{
+        width: 58px;
+        background: url(../assets/image/main/topbar.png) no-repeat 0 -136px;
+        color: $fontColor;
+        padding-left: 32px;
+        line-height: 40px;
+        cursor: pointer;
+        margin: 0 $margin 0 $margin;
+        &:hover{
+            background: url(../assets/image/main/topbar.png) no-repeat -100px -136px;
+        }
+    }
+    .main-person-info{
+        width: 50px;
+        height: $height;
+        color: $fontColor;
+        display: flex;
+        align-items: center;
+        background: url(../assets/image/main/topbar.png) right -26px;
+        position: relative;
+        cursor: pointer;
+        div{
+            background: url(../assets/image/main/109951162928587120.jpg) no-repeat center;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+        }
+        .main-triangle-icon{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 72px;
+            top: -8px;
+            background: url(../assets/image/main/toplist.png) no-repeat -20px 0;
+        }
+        ul{
+            list-style: none;
+            width: 158px;
+            position: absolute;
+            background-color: #2b2b2b;
+            left: -63px;
+            top: 62px;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            li{
+                line-height: 34px;
+                color: $fontColor;
+                text-align: center;
+                &:hover{
+                    background-color: #353535;
+                }
+            }
+        }
+    }
+    .main-dot{
+        display: block;
+        position: absolute;
+        top: 24px;
+        left: 55px;
+        width: 6px;
+        height: 6px;
+        border-radius: 6px;
+        background: #C20C0C;
+    }
+    .main-dot-hot{
+        display: block;
+        position: absolute;
+        width: 28px;
+        height: 14px;
+        top: 22px;
+        left: 100px;
+        background: url(../assets/image/main/topbar.png) no-repeat -190px 0;
+    }
+}
+.main-footer{
+    background-color: #f2f2f2;
+    border-top: 1px solid #d3d3d3;
+    .main-linkto{
+        a{
+            font-size: 12px;
+            color: #999;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        i{
+            display: inline-block;
+            width: 10px;
+            height: 16px;
+            margin-bottom: -3px;
+            margin-right: 10px;
+            border-right: 1.3px solid #c2c2c2;
+        }
+    }
+    p{
+        color: #666;
+        font-size: 12px;
+        line-height: 24px;
+        span{
+            margin-right: 14px;
+        }
+        a{
+            color: #666;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    .main-extra{
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+@mixin imageSet($left, $top){
+    background: url(../assets/image/main/foot_enter.png) no-repeat $left $top;
+}
+@for $i from 1 through 5{
+    .main-extra a:nth-child(#{$i}){
+        display: block;
+        width: 60px;
+        height: 70px;
+        @if $i==1 {@include imageSet(-60px, -80px)}
+        @else if $i==2 {@include imageSet(0, -80px)}
+        @else if $i==3 {@include imageSet(0, 0)}
+        @else if $i==4 {@include imageSet(-60px, 0)}
+        @else {background: url(../assets/image/main/cash.png) no-repeat center top;}
+    }
+}
+@for $i from 1 through 6 {
+    ul li:nth-child(#{$i}) i{
+        position: absolute;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 8px;
+        @if $i==1 {@include setImage(0, -80px)}
+        @else if $i==2 {@include setImage(-20px,-120px)}
+        @else if $i==3 {@include setImage(0,-100px)}
+        @else if $i==4 {@include setImage(0,-220px)}
+        @else if $i==5 {@include setImage(0,-140px)}
+        @else {@include setImage(0,-200px)}
+    }
+}

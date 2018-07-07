@@ -1,0 +1,51 @@
+<div el-container direction='vertical'>
+  <div el-header class="main-header" height='70px'>
+    <ng-container>
+      <div class="main-logo"></div>
+      <div class="main-title">
+        <div>发现音乐</div>
+        <div>我的音乐</div>
+        <div style="position: relative;">朋友<i class="main-dot"></i></div>
+        <div>商城</div>
+        <div>音乐人</div>
+        <div style="position: relative;">下载客户端<i class="main-dot-hot"></i></div>
+      </div>
+      <el-input placeholder="音乐/电台/视频/用户" size='small' icon="search" [model]="input2">
+      </el-input>
+      <div class="main-video">视频投稿</div>
+      <div class="main-person-info" (mouseover)='showMore(true)' (mouseleave)='showMore(false)'>
+        <div></div>
+        <ul *ngIf='myOperation'>
+          <li><i></i>我的主页</li>
+          <li><i></i>我的消息</li>
+          <li><i></i>我的等级</li>
+          <li><i></i>VIP会员</li>
+          <li><i></i>个人设置</li>
+          <li><i></i>退出</li>
+          <i class="main-triangle-icon"></i>
+        </ul>
+      </div>
+    </ng-container>
+  </div>
+  <div el-main>
+    <router-outlet></router-outlet>
+  </div>
+  <div el-footer class="main-footer" height='auto'>
+    <div el-container direction='horizontal' style='width: 980px;margin: 0 auto;'>
+      <div el-main>
+          <nav class="main-linkto">
+           <a href='#'>关于网易</a><i></i>
+           <a href='#'>客户服务</a><i></i>
+           <a href='#'>网站导航</a><i></i>
+           <a href='#'>服务条款</a><i></i>
+           <a href='#'>意见反馈</a>
+          </nav>
+          <p><span>网易公司版权所有©1997-2018</span>杭州乐读科技有限公司运营：<a href="#">浙网文[2018]3506-263号</a></p>
+          <p><span>违法和不良信息举报电话：0571-89853516</span>举报邮箱：<a href="#">cloudmusicservice@163.com</a></p>
+      </div>
+      <div el-main class="main-extra">
+        <a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a>
+      </div>
+    </div>
+  </div>
+</div>
